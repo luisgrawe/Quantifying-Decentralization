@@ -1,4 +1,4 @@
-# QuantifyingDecentralization
+# Quantifying Decentralization
 This is an artifact that is part of my bachelor's thesis at the Chair of Information Systems at Freie Universität Berlin. 
 For testing the project one must follow a few steps:
 
