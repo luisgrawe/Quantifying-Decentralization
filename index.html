@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Decentralization Degree</title> <!-- Title added here -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #555;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            width: 100%;
+            margin: 20px auto; /* Change margin to 'auto' */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Add text-align property */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .container ol li {
+            margin-bottom: 10px; 
+        }
+
+        /* Container styles */
+        .decentralization-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .decentralization-box {
+            flex: 0 0 calc(33.333% - 40px);
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border-radius: 10px;
+            margin: 20px;
+            position: relative;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 0; 
+            margin-bottom: 10px;
+            margin-left: 0; 
+    }
+        h1 {
+        color: white;
+    }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Blockchain Decentralization Degree</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    {% for blockchain in blockchains %}
+        <a href="/{{ blockchain }}">{{ blockchain }}</a>
+    {% endfor %}
+</nav>
+
+<main>
+    <div class="container">
+        <h2>Welcome to the Blockchain Decentralization Quantifier!</h2>
+        <p>Get insights into the distributed nature of five different blockchains and make informed decisions.</p>
+        <p>Currently, this comparator quantifies the degree of decentralization for Bitcoin, Ethereum, Cardano, Solana, and Avalanche on a scale between 0 and 1.</p>
+        <p>A score of <b>1</b> means <b>complete decentralization</b> while a score of <b>0</b> indicates <b>strong centralization</b>.</p>
+
+        <h3 style="margin-left: 20px;">Measured Parameters:</h3>
+        <div class="decentralization-section">
+            <div class="decentralization-box">
+                <h3>Hosting Concentration</h3>
+                <p>Hosting Concentration measures the concentration of hosting providers in a blockchain network, as a high concentration might yield security and privacy implications for its participants.</p>
+                <p><b>Measurement Technique: </b>Shannon Index</p>
+            </div>
+            <div class="decentralization-box">
+                <h3>Geographical Diversity</h3>
+                <p>The Geographical Diversity analyzes the geographical distribution of nodes that are participating in the blockchain. A high concentration of nodes in one location makes the network vulnerable to geopolitical manipulation or governmental policy changes. Geographical Diversity is measured by analyzing a network's nodes per country.</p>
+                <p><b>Measurement Technique: </b>Geographical Diversity Index</p>
+            </div>
+            <div class="decentralization-box">
+                <h3>Exchange Concentration</h3>
+                <p>The distribution of tokens predominantly takes place via exchanges. As most of these exchanges are centralized, thus, prevailing as a possible single point of failure. Therefore, the Exchange Concentration analyzes the daily trading volumes of crypto exchanges that offer the specific blockchain.</p>
+                <p><b>Measurement Technique: </b>Reciprocal of the Gini Coefficient</p>
+            </div>
+            <div class="decentralization-box">
+                <h3>Reference Client Contribution</h3>
+                <p>A blockchain’s reference client is developed and maintained by software developers. Reliance on a small core team of such developers can introduce risks for the safety and reliability of the blockchain and obtains these developers a disproportionate amount of influence over the network. Thus Reference Client Contribution measures the amount of commits per author.</p>
+                <p><b>Measurement Technique: </b>Reciprocal of the Gini Coefficient</p>
+            </div>
+            <div class="decentralization-box">
+                <h3>Owner Control</h3>
+                <p>Owner Control analyzes the number of tokens that are attributed to the blockchain’s founders in the early phase of the network in comparison to the current token supply. A disproportionate distribution of tokens in the initial phase of a blockchain can provide the founders a large amount of influence over the network.</p>
+                <p><b>Measurement Technique: </b>Fractional Owner Index</p>
+            </div>
+            <div class="decentralization-box">
+                <h3>Improvement Protocol</h3>
+                <p>Suggestions for improvements of a blockchain are mostly made via an improvement proposal system that enables anyone to propose changes and engage in discussions. The improvement protocol measures if improvements are mostly made by few authors or if improvment proposals are truly decentralized.</p>
+                <p><b>Measurement Technique: </b>Reciprocal of the Gini Coefficient</p>
+            </div>
+            <div class="decentralization-box">
+                <h3>Decision Making</h3>
+                <p>Decision Making measures the distribution of the overall hash rate in PoW blockchains and the distribution of stake in PoS-based blockchains as a high concentration means an advantage in the blockchain's consensus mechanism.</p>
+                <p><b>Measurement Technique: </b>Reciprocal of the Gini Coefficient</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
