@@ -53,8 +53,6 @@ def eth_geo_index():
             # Extract the "value" from each dictionary in the list
             eth_geo_list = [entry.get('value') for entry in data_list]
 
-            print(f"Ethereum's geographical distribution of nodes: {eth_geo_list}")
-
             return eth_geo_list
         
         else: # If the first source is not available, try the second source
@@ -67,8 +65,6 @@ def eth_geo_index():
 
             eth_geo_list = [int(country.text.split()[0]) for country in country_elements] # Clean data and extract the number of nodes per country
             driver.quit()
-
-            print(f"Ethereum's distribution of nodes per country: {eth_geo_list}")
 
             return eth_geo_list
 
@@ -97,8 +93,6 @@ def eth_owner_control():
 
         eth_owner_list.append(number_value)
 
-        print(f"Ethereum's pre-mined ETH and current supply: {eth_owner_list}")
-
         return eth_owner_list
     
     else: # If the first source is not available, try the second source
@@ -117,8 +111,6 @@ def eth_owner_control():
             eth_owner_list.append(float(supply_element.text.replace(",", "").replace(" ETH", "")))
 
         driver.quit()
-
-        print(f"Ethereum's pre-mined ETH and current supply: {eth_owner_list}")
 
         return eth_owner_list
 
@@ -158,8 +150,6 @@ def eth_improvement_protocol():
 
     eth_ip_list = list(Counter(cleaned_authors_list).values()) # Count the number of EIPs per author
 
-    print(f"Ethereum's distribution of EIPs: {eth_ip_list}")
-
     return eth_ip_list
 
 
@@ -192,8 +182,6 @@ def eth_reference_client_concentration():
         except Exception as e:
             print(f"An error occurred: {str(e)}")
 
-    print(f"Ethereum's distribution of commits to the reference client: {eth_commits_list}")
-
     return eth_commits_list
 
 
@@ -221,8 +209,6 @@ def eth_decision_making():
 
         driver.quit()
 
-        print(f"Ethereum's distribution of staked ETH: {eth_stakes_list}")
-
         return eth_stakes_list
     
     else: # If the first source is not available, try the second source
@@ -239,8 +225,6 @@ def eth_decision_making():
             eth_stakes_list.append(int(element.text)*32)
 
         driver.quit()
-
-        print(f"Ethereum's distribution of staked ETH: {eth_stakes_list}")
 
         return eth_stakes_list
 
@@ -264,8 +248,6 @@ def eth_hosting_concentration():
         eth_hosting_list.append(entry['y'])
 
     driver.quit()
-
-    print(f"Ethereum's distribution of nodes per hosting provider: {eth_hosting_list}")
 
     return eth_hosting_list
 
@@ -320,8 +302,6 @@ def eth_exchange_concentration():
         
         driver.quit()
 
-        print(f"Ethereum's distribution of trading volume per exchange: {eth_exchange_list}")
-
         return eth_exchange_list
     
     else: # If the first source is not available, try the second source
@@ -367,8 +347,6 @@ def eth_exchange_concentration():
                     break
 
         driver.quit()
-
-        print(f"Ethereum's distribution of trading volume per exchange: {eth_exchange_list}")
 
         return eth_exchange_list
 
