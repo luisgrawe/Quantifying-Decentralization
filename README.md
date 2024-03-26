@@ -3,7 +3,7 @@ This is an artifact that is part of my bachelor's thesis at the Chair of Informa
 For testing the project one must follow a few steps:
 
 1. Create a database with the attached configuration file
-2. Set up a .env file that stores sensible database connection data, so the artifact can access the database (an example for the structure of the .env file is provided). The values for DB_Host, DB_password, DB_USER and DB_DATABASE must be adjusted according to the database setup.
+2. Set up a .env file that stores sensible database connection data, so the artifact can access the database (an example for the structure of the .env file is provided). The values for DB_Host, DB_password, and DB_USER must be adjusted according to the database setup.
 
 **Abstract**
 
