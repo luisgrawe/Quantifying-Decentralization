@@ -52,8 +52,6 @@ def ava_improvement_protocol():
 
     driver.quit()
 
-    print(f"Avalanche's distribution of AIPs: {ava_ip_list}")
-
     return ava_ip_list
 
 
@@ -85,8 +83,6 @@ def ava_reference_client_concentration():
 
         except Exception as e:
             print(f"An error occurred: {str(e)}")
-
-    print(f"Avalanche's distribution of commits to the reference client: {ava_commits_list}")
 
     return ava_commits_list
 
@@ -176,9 +172,6 @@ def ava_geo_diversity_hosting_concentration():
 
     driver.quit()
 
-    print(f"Avalanche's distribution of nodes per country: {ava_geo_list}")
-    print(f"Avalanche's distribution of nodes per hosting provider: {ava_hosting_list}")
-
     return ava_geo_list, ava_hosting_list
 
 
@@ -223,8 +216,6 @@ def ava_decision_making():
 
         driver.quit()
 
-        print(f"Avalanche's distribution of staked AVAX per validator: {ava_stake_list}")
-
         return ava_stake_list
     
     else: # If the website is not available, use the backup data source
@@ -253,8 +244,6 @@ def ava_decision_making():
                 time.sleep(5)
 
         driver.quit()
-
-        print(f"Avalanche's distribution of staked AVAX per validator: {ava_stake_list}")
 
         return ava_stake_list
 
@@ -307,8 +296,6 @@ def ava_exchange_concentration():
 
         driver.quit()
 
-        print(f"Avalanche's distribution of trading volume per exchange: {ava_exchange_list}")
-
         return ava_exchange_list
     
     else: # If the website is not available, use the backup data source
@@ -356,8 +343,6 @@ def ava_exchange_concentration():
 
         driver.quit()
 
-        print(f"Avalanche's distribution of trading volume per exchange: {ava_exchange_list}")
-
         return ava_exchange_list
 
 
@@ -381,8 +366,6 @@ def ava_owner_control():
 
         driver.quit()
 
-        print(f"Avalanche's pre-mined AVAX and current supply: {ava_owner_list}")
-
         return ava_owner_list
     
     else: # If the website is not available, use the backup data source
@@ -401,8 +384,6 @@ def ava_owner_control():
             ava_owner_list.append(float(supply_element.text.replace(",", "").replace(" AVAX", "")))
 
         driver.quit()
-
-        print(f"Avalanche's pre-mined AVAX and current supply: {ava_owner_list}")
         
         return ava_owner_list
 
