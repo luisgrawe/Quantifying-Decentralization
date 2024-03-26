@@ -46,8 +46,6 @@ def btc_geo_index():
         for td in data_elements:
             btc_node_list.append(int(td.get_text(strip=True).split()[0])) # Split the text to get the number of nodes
 
-    print(f"Bitcoin's distribution of nodes per country: {btc_node_list}")
-
     return btc_node_list
 
 
@@ -69,8 +67,6 @@ def btc_owner_control():
         elements_text = element[1].get_text(strip=True).replace(",","").replace(" BTC", "") # Clean the data
         btc_supply_list.append(float(elements_text))
 
-        print(f"Bitcoin's pre-mined BTC and current supply: {btc_supply_list}")
-
         return btc_supply_list
     
     else: # If the first request fails, try another source
@@ -89,8 +85,6 @@ def btc_owner_control():
             btc_supply_list.append(float(supply_element.text.replace(",", "").replace(" BTC", "")))
 
         driver.quit()
-
-        print(f"Bitcoins pre-mined BTC and current supply: {btc_supply_list}")
 
         return btc_supply_list
 
@@ -124,8 +118,6 @@ def btc_improvement_protocol():
 
     driver.quit()
 
-    print(f"Bitcoin's distribution of BIPs: {btc_ip_list}")
-
     return btc_ip_list
 
 
@@ -158,8 +150,6 @@ def btc_reference_client_concentration():
         except Exception as e:
             print(f"An error occurred: {str(e)}")
 
-    print(f"Bitcoin's distribution of commits to the reference client: {btc_commits_list}")
-
     return btc_commits_list
 
 
@@ -190,8 +180,6 @@ def btc_decision_making():
 
         driver.quit()
 
-        print(f"Bitcoin's Hashrate Distribution: {btc_hashrate_list}")
-
         return btc_hashrate_list
     
     else: # If the first source is not available, try another source
@@ -208,8 +196,6 @@ def btc_decision_making():
             btc_hashrate_list.append(float(e.text.replace(' EH/s', '')))
 
         driver.quit()
-
-        print(f"Bitcoin's Hashrate Distribution: {btc_hashrate_list}")
 
         return btc_hashrate_list
 
@@ -248,8 +234,6 @@ def btc_hosting_concentration():
             btc_hosting_list.append(int(cells[column_index].text))
 
     driver.quit()
-
-    print(f"Bitcoin's distribution of nodes per hosting provider: {btc_hosting_list}")
 
     return btc_hosting_list
 
@@ -304,8 +288,6 @@ def btc_exchange_concentration():
 
         driver.quit()
 
-        print(f"Bitcoin's distribution of trading volume per exchange: {btc_exchange_list}")
-
         return btc_exchange_list
     
     else: # If the first source is not available, try another source
@@ -352,8 +334,6 @@ def btc_exchange_concentration():
                     break
 
         driver.quit()
-
-        print(f"Bitcoin's distribution of trading volume per exchange: {btc_exchange_list}")
 
         return btc_exchange_list
 
