@@ -131,7 +131,7 @@ def ava_geo_diversity_hosting_concentration():
                         # Geo data
                         if 'Location' in e.text:
                             if "," in e.find_element(By.CSS_SELECTOR, 'div.col-content').text: # clean data
-                                country_list.append(e.find_element(By.CSS_SELECTOR, 'div.col-content').text.split(',')[1]) # sometimes city and country are provided -> only extract the country data
+                                country_list.append(e.find_element(By.CSS_SELECTOR, 'div.col-content').text.split(', ')[1]) # sometimes city and country are provided -> only extract the country data
                             else:
                                 country_list.append(e.find_element(By.CSS_SELECTOR, 'div.col-content').text)
 
