@@ -46,8 +46,6 @@ def sol_reference_client_concentration():
         except Exception as e:
             print(f"An error occurred: {str(e)}")
 
-    print(f"Solana's distribution of commits to the reference client: {sol_commits_list}")
-
     return sol_commits_list
 
 
@@ -79,8 +77,6 @@ def sol_geo_index():
         sol_geo_list = list(Counter(sol_geo_case_list).values())
 
         driver.quit
-
-        print(f"Solana's distribution of nodes per country: {sol_geo_list}")
 
         return sol_geo_list
 
@@ -125,8 +121,6 @@ def sol_owner_control():
 
         driver.quit()
 
-        print(f"Solana's pre-mined SOL and current supply: {sol_owner_list}")
-
         return sol_owner_list
     
     else: # if the first data source is not available, use the second one
@@ -145,8 +139,6 @@ def sol_owner_control():
             sol_owner_list.append(float(supply_element.text.replace(",", "").replace(" SOL", "")))
 
         driver.quit()
-
-        print(f"Solana's pre-mined SOL and current supply: {sol_owner_list}")
 
         return sol_owner_list
 
@@ -183,8 +175,6 @@ def sol_improvement_protocol():
     sol_ip_list = list(name_counts.values())
 
     driver.quit()
-
-    print(f"Solana's distribution of SIPs: {sol_ip_list}")
 
     return sol_ip_list
 
@@ -239,8 +229,6 @@ def sol_exchange_concentration():
 
         driver.quit()
 
-        print(f"Solana's distribution of trading volume per exchange: {sol_exchange_list}")
-
         return sol_exchange_list
     
     else: # if the first data source is not available, use the second one
@@ -287,8 +275,6 @@ def sol_exchange_concentration():
 
         driver.quit()
 
-        print(f"Solana's distribution of trading volume per exchange: {sol_exchange_list}")
-
         return sol_exchange_list
 
 
@@ -312,8 +298,6 @@ def sol_hosting_concentration():
             sol_hosting_list.append(int(e.text))
 
         driver.quit
-
-        print(f"Solana's distribution of nodes per hosting provider: {sol_hosting_list}")
 
         return sol_hosting_list
     
@@ -382,8 +366,6 @@ def sol_hosting_concentration():
 
         driver.quit()
 
-        print(f"Solana's distribution of nodes per hosting provider: {sol_hosting_list}")
-
         return sol_hosting_list
 
 
@@ -431,8 +413,6 @@ def sol_decision_making():
             else: next
         
         driver.quit()
-
-        print(f"Solana's distribution of staked SOL per validator: {sol_stake_list}")
         
         return sol_stake_list
     
@@ -469,7 +449,5 @@ def sol_decision_making():
             time.sleep(8)
 
         driver.quit()
-
-        print(f"Solana's distribution of staked SOL per validator: {sol_stake_list}")
         
         return sol_stake_list
