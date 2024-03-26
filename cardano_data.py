@@ -63,8 +63,6 @@ def ada_improvement_protocol():
 
     driver.quit()
 
-    print(f"Cardano's distribution of CIPs: {ada_ip_list}")
-
     return ada_ip_list
 
 
@@ -96,8 +94,6 @@ def ada_reference_client_concentration():
         except Exception as e:
             print(f"An error occurred: {str(e)}")
 
-    print(f"Cardano's distribution of commits to the reference client: {ada_commits_list}")
-
     return ada_commits_list
 
 
@@ -122,8 +118,6 @@ def ada_owner_control():
 
         driver.quit()
 
-        print(f"Cardano's pre-mined ADA and current supply: {ada_owner_list}")
-
         return ada_owner_list
     
     else: # If the first source is not available, use the second source
@@ -141,8 +135,6 @@ def ada_owner_control():
             ada_owner_list.append(float(supply_element.text.replace(",", "").replace(" ADA", "")))
 
         driver.quit()
-
-        print(f"Cardano's pre-mined ADA and current supply: {ada_owner_list}")
 
         return ada_owner_list
 
@@ -197,8 +189,6 @@ def ada_exchange_concentration():
 
         driver.quit()
 
-        print(f"Cardano's distribution of trading volume per exchange: {ada_exchange_list}")
-
         return ada_exchange_list
     
     else: # If the first source is not available, use the second source
@@ -244,8 +234,6 @@ def ada_exchange_concentration():
                     break
 
         driver.quit()
-
-        print(f"Cardano's distribution of trading volume per exchange: {ada_exchange_list}")
 
         return ada_exchange_list
 
@@ -358,9 +346,6 @@ def ada_geo_hosting():
 
     driver.quit()
 
-    print(f"Cardano's distribution of nodes per country: {ada_geo_list}")
-    print(f"Cardano's distribution of nodes per hosting provider: {ada_hosting_list}")
-
     return ada_geo_list, ada_hosting_list
 
 
@@ -456,8 +441,6 @@ def ada_decision_making():
 
         driver.quit()
 
-        print(f"Cardano's distribution of staked ADA per pool: {ada_stake_list}")
-
         return ada_stake_list
     
     else: # If the first source is not available, use the second source
@@ -485,7 +468,5 @@ def ada_decision_making():
                 break
 
         driver.quit()
-
-        print(f"Cardano's distribution of staked ADA per pool: {ada_stake_list}")
         
         return ada_stake_list
